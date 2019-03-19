@@ -1,4 +1,4 @@
-# go-lz4-wrapper
+# go_lz4_wrapper
 Wrapper of go lz4 library, used to interoperable with python-lz4.
 
 Old Library [steeve/python-lz4](https://github.com/steeve/python-lz4) compress data using lz4 block format, and append 4 bytes unsigned integer at head, which is the length of origianl data.  
@@ -10,4 +10,4 @@ But there are no such function in go-binding libraries.
 In library [bkaradzic/go-lz4](https://github.com/bkaradzic/go-lz4), there seems no api to generate data in lz4 block format.  
 The library [pierrec/lz4](https://github.com/pierrec/lz4) support compress data in lz4 block format, but without api to compress data with original data length appended at output string head. Even when input is not compressible, it will generate nothing.
 
-In this repositoy, I will wrap a function to decompress data with a original data length at head. And a compress function to deal with not-compressible data, to generate a expanded string in lz4 block format.
+In this repositoy, I will wrap [pierrec/lz4](https://github.com/pierrec/lz4)'s function to decompress data with a original data length at head. And also provide a compress function to deal with not-compressible data, to generate a expanded string in lz4 block format.
