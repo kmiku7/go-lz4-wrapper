@@ -13,7 +13,7 @@ const (
 	HEADER_SIZE = 4
 )
 
-func decompress(src []byte) ([]byte, error) {
+func Decompress(src []byte) ([]byte, error) {
 	if len(src) < HEADER_SIZE {
 		return nil, errors.New("input too short.")
 	}
