@@ -18,7 +18,7 @@ func decompress(src []byte) ([]byte, error) {
 		return nil, errors.New("input too short.")
 	}
 	originalDataLength := binary.LittleEndian.Uint32(src[0:4])
-	if originalDataLength > math.MaxInt32 {
+	if originalDataLength > uint32(math.MaxInt32) {
 		return nil, fmt.Errorf("invalid size in header: 0x%x", src[0:4])
 	}
 	dst := make([]byte, originalDataLength)
@@ -26,7 +26,7 @@ func decompress(src []byte) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	if decompressLength != originalDataLength {
+	if uint32(decompressLength) != originalDataLength {
 		return nil, fmt.Errorf("coruppted size in header: 0x%x", src[0:4])
 	}
 	return dst, nil
