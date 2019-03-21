@@ -1,4 +1,4 @@
-# go_lz4_wrapper
+# go-lz4-wrapper
 Wrapper of go lz4 library, used to interoperable with python-lz4.
 
 Old Library [steeve/python-lz4](https://github.com/steeve/python-lz4) compress data using lz4 block format, and append 4 bytes unsigned integer at head, which is the length of origianl data.  
