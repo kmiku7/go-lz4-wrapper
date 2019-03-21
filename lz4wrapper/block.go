@@ -3,7 +3,7 @@ Package go_lz4_wrapper implements Decompress/Compress function to interoperate
 with python-lz4 library, with the data format which has the size of
 uncompressed data stored at the start.
 */
-package go_lz4_wrapper
+package lz4wrapper
 
 import (
 	"encoding/binary"
