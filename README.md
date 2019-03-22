@@ -1,4 +1,4 @@
-[![godoc](https://godoc.org/github.com/kmiku7/go-lz4-wrapper/lz4wrapper?status.png)](https://godoc.org/github.com/kmiku7/go-lz4-wrapper/lz4wrapper)
+[![GoDoc](https://godoc.org/github.com/kmiku7/go-lz4-wrapper/lz4wrapper?status.svg)](https://godoc.org/github.com/kmiku7/go-lz4-wrapper/lz4wrapper)
 
 # go-lz4-wrapper
 Wrapper of go lz4 library, used to interoperable with python-lz4.
