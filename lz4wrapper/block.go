@@ -68,10 +68,12 @@ func Compress(src []byte) ([]byte, error) {
 		} else {
 			dstBuffer[dstOffset] = 0xF0
 			dstOffset++
-			for srcLen -= 0xF; srcLen >= 0; srcLen -= 0xFF {
+			for srcLen -= 0xF; srcLen >= 0xFF; srcLen -= 0xFF {
 				dstBuffer[dstOffset] = 0xFF
 				dstOffset++
 			}
+			dstBuffer[dstOffset] = byte(srcLen)
+			dstOffset += 1
 		}
 		copy(dstBuffer[dstOffset:], src)
 		comLen = dstOffset + len(src) - headerSize

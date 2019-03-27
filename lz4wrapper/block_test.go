@@ -38,4 +38,9 @@ func TestNotCompressibleString(t *testing.T) {
 
 	operationPair(t, "CaseNotCompressibleStringLen10", []byte("1234567890"),
 		[]byte{0x0a, 0x0, 0x0, 0x0, 0xa0, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'})
+
+	operationPair(t, "CaseNotCompressibleStringLen20", []byte("1234567890qwertyuiop"),
+		[]byte{0x14, 0x0, 0x0, 0x0, 0xF0, 0x05,
+			'1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+			'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'})
 }
